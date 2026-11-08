@@ -1,5 +1,9 @@
 name: Build Mod
-on: [push]
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,8 +13,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Grant Execute Permission
-        run: chmod +x gradlew || true
+      - name: Make Gradle Wrapper Executable
+        run: chmod +x ./gradlew
       - name: Build with Gradle
         run: ./gradlew build
       - uses: actions/upload-artifact@v4
