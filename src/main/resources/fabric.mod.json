@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "simpleclient",
+  "version": "1.0.0",
+  "name": "Simple Utility Client",
+  "description": "Spawner Finder, Storage ESP, Player ESP, Freecam, and Click GUI",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.example.client.SimpleClient"
+    ]
+  },
+  "mixins": [
+    "simpleclient.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "*",
+    "fabric-api": "*"
+  }
+}
